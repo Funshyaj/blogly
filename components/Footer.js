@@ -5,8 +5,8 @@ const Footer = () => {
         <footer className="flex h-[30vh] p-5 justify-between">
 <div className="flex flex-col gap-5 justify-center">
     <h2 className="text-white font-bold text-2xl">Contact Us now</h2>
-    <a href="" className="text-gray-300">Funshoajayi29@gmail.com</a>
-    <a href="" className="text-gray-300">+2348078559693</a>
+    <a href="mailto:funshoajayi29@gmail.com" className="text-gray-300">Funshoajayi29@gmail.com</a>
+    <a href="tel:2348078559693" className="text-gray-300">+2348078559693</a>
 </div>
 
 <div className="flex items-end">
