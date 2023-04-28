@@ -29,7 +29,7 @@ export default function Home({rec_posts,other_posts}) {
 <div className='flex gap-10 flex-col'>
   <h2 className='text-5xl md:text-6xl lg:text-8xl font-bold text-center break-words [word-spacing:10px]'>Get your daily dose of
 <br/>  
-  <span>daily post</span>
+  <span>daily posts</span>
 </h2>
 <p className='text-center text-base lg:px-44'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero tenetur commodi voluptatem repudiandae dolorem voluptatum facilis quasi velit quaerat. Vitae aut ad debitis voluptatibus optio magnam eius? Sapiente, accusantium!</p>
 
