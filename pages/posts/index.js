@@ -26,11 +26,13 @@ const Posts = ({allposts}) => {
 
 {/* mapping all posts */}
 {allposts.map(post=>
-(<Post 
-  key={post.id}
-title={post.title} 
-content={post.body}
-/>)
+(<div key={post.id}>
+  <Post 
+    id={post.id}
+  title={post.title} 
+  content={post.body}
+  />
+  </div>)
 )}
 </div>
   </main>

@@ -50,11 +50,13 @@ export default function Home({rec_posts,other_posts}) {
 
 {/* mapping some posts */}
 {rec_posts.map(post=>
-(<Post 
-  key={post.id}
-title={post.title} 
-content={post.body}
-/>)
+(<div key={post.id}>
+  <Post 
+    id={post.id}
+  title={post.title} 
+  content={post.body}
+  />
+  </div>)
 )}
   
 </div>
@@ -68,11 +70,14 @@ content={post.body}
 
 {/* mapping some posts */}
 {other_posts?.map(post=>
-(<Post 
-  key={post.id}
+(
+<div key={post.id}>
+<Post 
+  id={post.id}
 title={post.title} 
 content={post.body}
-/>)
+/>
+</div>)
 )}
   
 </div>
