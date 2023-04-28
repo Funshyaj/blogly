@@ -1,12 +1,23 @@
 import Header from "@/components/Header"
 import Post from "@/components/Post"
-import { useEffect } from "react"
 
-export default function Home() {
+export const getStaticProps = async ()=>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const data = await res.json();  
+  // this cuts out the first 6 post
+  const recommendedData = data.slice(0,6);
+  // this cuts out from post 7 to 10
+  const others = data.slice(6,10);
 
-  // useEffect(){
+  return{
+      props:{
+        rec_posts:recommendedData,
+        other_posts:others
+      }
+  }
+}
 
-  // };
+export default function Home({rec_posts,other_posts}) {
 
 
   return(
@@ -37,28 +48,36 @@ export default function Home() {
 
 <div className='flex flex-col gap-5 lg:grid lg:grid-cols-2 '>
 
-  {/* template for a single post */}
-  <Post 
-title={'Title'} 
-content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quo asperiores. Illum dignissimos, quidem, voluptate iste odio laborum molestias possimus reiciendis vero sunt doloremque laboriosam assumenda perspiciatis. Expedita, blanditiis totam!'}
-/>
-
-<Post 
-title={'Title'} 
-content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quo asperiores. Illum dignissimos, quidem, voluptate iste odio laborum molestias possimus reiciendis vero sunt doloremque laboriosam assumenda perspiciatis. Expedita, blanditiis totam!'}
-/>
-
-<Post 
-title={'Title'} 
-content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quo asperiores. Illum dignissimos, quidem, voluptate iste odio laborum molestias possimus reiciendis vero sunt doloremque laboriosam assumenda perspiciatis. Expedita, blanditiis totam!'}
-/>
-
-<Post 
-title={'Title'} 
-content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quo asperiores. Illum dignissimos, quidem, voluptate iste odio laborum molestias possimus reiciendis vero sunt doloremque laboriosam assumenda perspiciatis. Expedita, blanditiis totam!'}
-/>
+{/* mapping some posts */}
+{rec_posts.map(post=>
+(<Post 
+  key={post.id}
+title={post.title} 
+content={post.body}
+/>)
+)}
+  
 </div>
 </section>
+
+ {/* posts list section */}
+ <section className='p-5' >
+  <h2 className='text-3xl font-bold mb-10'>Some other posts you may like</h2>
+
+<div className='flex flex-col gap-5 lg:grid lg:grid-cols-2 '>
+
+{/* mapping some posts */}
+{other_posts?.map(post=>
+(<Post 
+  key={post.id}
+title={post.title} 
+content={post.body}
+/>)
+)}
+  
+</div>
+</section>
+
 </main>
 </>
   )
