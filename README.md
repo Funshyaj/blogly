@@ -10,7 +10,7 @@ I used [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get
 Clone the project
 
 ```bash
-  git clone https://github.com.funshyaj/blogly
+  git clone https://github.com/funshyaj/blogly
 ```
 
 Go to the project directory
