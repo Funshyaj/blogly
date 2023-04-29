@@ -29,10 +29,12 @@ const PostDetasils = ({post}) => {
     return ( <div>
 {/* header */}
 <Header btnName={'Back'} route={'posts'}/>
-<main className="min-h-screen">
-     <h1>{post.title}</h1>
+
+ {/* body */}
+<main className="min-h-[60vh] px-5">
+     <h1 className="font-bold text-3xl">{post.title}</h1>
      <br />
-     <br />
+     <p className="font-light pb-2">Post number - {post.id}</p>
      <p>{post.body}</p>
 </main>
         
