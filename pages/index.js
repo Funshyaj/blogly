@@ -1,10 +1,11 @@
 import Header from "@/components/Header"
 import Post from "@/components/Post"
 
+//  fetching the data before rendering the page
 export const getStaticProps = async ()=>{
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const data = await res.json();  
-  // this cuts out the first 6 post
+  // this cuts out the first 6 posts
   const recommendedData = data.slice(0,6);
   // this cuts out from post 7 to 10
   const others = data.slice(6,10);
@@ -23,6 +24,7 @@ export default function Home({rec_posts,other_posts}) {
   return(
 <>
   <Header btnName={'All Posts'} route={'posts'}/>
+
     <main>
     {/* Hero section */}
 <section className='flex justify-around h-[90vh] flex-col items-center px-5 mt-5'>
