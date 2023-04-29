@@ -31,3 +31,7 @@ Start the server
   npm run dev
 ```
 Then open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Note
+
+You will need to be connected to the internet before running dev to avoid errors
